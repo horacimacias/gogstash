@@ -45,7 +45,7 @@ func InitHandler(ctx context.Context, raw *config.ConfigRaw) (config.TypeFilterC
 		return nil, err
 	}
 
-	if conf.Split[0] == "" && conf.Replace[0] == "" && conf.Merge[0] == "" {
+	if conf.Split[0] == "" && conf.Replace[0] == "" && conf.Merge[0] == "" && len(conf.AddTags) == 0 && len(conf.RemoveTags) == 0 && len(conf.RemoveFields) == 0 && len(conf.AddFields) == 0 {
 		return nil, ErrNotConfigured
 	}
 
