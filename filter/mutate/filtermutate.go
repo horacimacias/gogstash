@@ -50,7 +50,7 @@ func InitHandler(ctx context.Context, raw *config.ConfigRaw) (config.TypeFilterC
 		return nil, err
 	}
 
-	if conf.Split[0] == "" && conf.Replace[0] == "" && conf.Merge[0] == "" {
+	if conf.Split[0] == "" && conf.Replace[0] == "" && conf.Merge[0] == "" && !conf.IsConfigured() {
 		return nil, ErrNotConfigured
 	}
 
